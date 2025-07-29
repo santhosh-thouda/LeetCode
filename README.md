@@ -1,32 +1,29 @@
-# 🧠 LeetCode Auto Sync 🚀
+# 🧠 LeetCode Solutions 🚀
 
-This repository automatically syncs my accepted LeetCode submissions to GitHub.  
-Whenever I solve a problem on [LeetCode](https://leetcode.com), the accepted solution is pushed here.
+This repository contains my accepted solutions to problems on [LeetCode](https://leetcode.com).  
+I regularly solve and upload new solutions to GitHub as part of my daily DSA practice.
 
-## 🔧 How It Works
+## 📁 Structure
 
-- ✅ Submit a solution on LeetCode
-- 🔄 If accepted, it's automatically committed and pushed to this repository
-- 📁 Solutions are organized by problem name and difficulty level (if supported)
+- 📂 Solutions are organized by problem name and/or difficulty
+- 🖋️ Most solutions include clean code with proper formatting
 
-## 📚 Benefits
+## 🎯 Goals
 
-- 🧩 Track problem-solving progress
-- 📝 Maintain a public portfolio of DSA practice
-- ☁️ Cloud backup of all accepted solutions
-- 🚀 Showcase consistency and commitment
+- 🧠 Improve problem-solving and coding skills
+- 📝 Maintain a well-organized reference of solved problems
+- 📈 Track my DSA journey consistently
 
-## 💡 Tech Used
+## 🛠️ Tech Stack
 
-- 🛠️ GitHub Actions / Custom Scripts
-- 🐍 Python (for automation if self-built)
-- ⛓️ LeetCode API or browser extension
+- 💻 Languages Used: C++, Java, Python, JavaScript (varies by problem)
+- 📚 Covers: Arrays, Strings, Trees, Graphs, DP, Recursion, and more
 
-## 📌 Note
+## 🗓️ Update Frequency
 
-- This repo only contains **accepted** solutions.
-- No boilerplate or unsolved problems are uploaded.
+- ✅ **New solutions are uploaded daily**
+- 🔄 Older solutions may be refactored over time
 
 ---
 
-> ✨ Stay consistent. Keep solving. Keep growing. 🚀
+> ⚡ Stay consistent. Keep solving. Learn every day. 📘
