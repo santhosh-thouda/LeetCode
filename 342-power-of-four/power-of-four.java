@@ -11,10 +11,5 @@ class Solution {
         // If after full division we reach exactly 1 → it was a power of four
         return n == 1;
 
-
-        // n = 64 → divisible by 4 → n = 16
-        // n = 16 → divisible by 4 → n = 4
-        // n = 4  → divisible by 4 → n = 1
-        // Reached 1 → true (64 = 4^3)
     }
 }
