@@ -15,7 +15,7 @@ class Solution {
         
         long half = fastPow(x, n/2, mod);
         long result = (half * half) % mod;
-
+        
         if(n % 2 != 0){
             result = (result * x) % mod;
         }
