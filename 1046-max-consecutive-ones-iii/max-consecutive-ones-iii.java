@@ -1,6 +1,6 @@
 class Solution {
     public int longestOnes(int[] nums, int k) {
-        // most optimal approach - using two pointers & sliding window again but this time no 2 while loops
+        
         int left = 0, right = 0;
         int len = 0, maxLen = 0;
         int zeroes = 0;
