@@ -1,13 +1,13 @@
 class Solution {
     public int longestOnes(int[] nums, int k) {
-        // using two pointers & sliding window
+        // most optimal approach - using two pointers & sliding window again but this time no 2 while loops
         int left = 0, right = 0;
         int len = 0, maxLen = 0;
         int zeroes = 0;
 
         while(right < nums.length){
             if(nums[right] == 0)zeroes++;
-            while(zeroes > k){
+            if(zeroes > k){
                 if(nums[left] == 0){
                     zeroes--;
                 }
