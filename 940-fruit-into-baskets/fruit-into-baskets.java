@@ -5,8 +5,8 @@ class Solution {
         int len = 0;
         int l = 0;
         int r = 0;
-
-            HashMap<Integer, Integer> map = new HashMap<>();
+        HashMap<Integer, Integer> map = new HashMap<>();
+        
         while(r < n){
             map.put(fruits[r], map.getOrDefault(fruits[r], 0) + 1);
             
