@@ -1,11 +1,17 @@
 class Solution {
     public int findMin(int[] nums) {
-        int n = nums.length;
-        int min = nums[0];
+        int left = 0, right = nums.length - 1;
 
-        for(int i = 0; i<n; i++){
-            min = Math.min(min, nums[i]);
+        int min = 0;
+        while(left < right){
+            int mid = left + (right - left)/2;
+            if(nums[mid] > nums[right]){
+                left = mid + 1;
+            }
+            else{
+                right = mid;
+            }
         }
-        return min;
+        return nums[left];
     }
 }
