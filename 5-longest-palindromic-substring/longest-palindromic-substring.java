@@ -8,7 +8,7 @@ class Solution {
             // considering the odd length
             int low = i;
             int high = i;
-
+    
             while(s.charAt(low) == s.charAt(high)){
                 low--;
                 high++;
@@ -35,7 +35,7 @@ class Solution {
                     break;
                 }
             }
-
+            
             palindrome = s.substring(low+1, high);
             if(palindrome.length() > LPS.length()){
                 LPS = palindrome;
