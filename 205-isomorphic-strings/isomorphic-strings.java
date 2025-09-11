@@ -13,17 +13,16 @@ class Solution {
                     map.put(c1, c2);
                 }
                 else{
-                    return false;
-                }
-            }
-            else{
-                char mappedChar = map.get(c1);
-                if(mappedChar != c2){
-                    return false;
-                }
-            }
-        }
-
-        return true;
-    }
+                    return false; 
+                } 
+            } 
+            else{ 
+                char mappedChar = map.get(c1); 
+                if(mappedChar != c2){ 
+                    return false; 
+                } 
+            } 
+        } 
+        return true; 
+    } 
 } 
