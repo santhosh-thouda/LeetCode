@@ -1,14 +1,12 @@
 class Solution {
     public String longestPalindrome(String s) {
-        if(s.length() <= 1)return s;
-
+        if(s.length() <= 1) return s;
         String LPS = "";
 
         for(int i = 1; i<s.length(); i++){
-            // considering the odd length
             int low = i;
             int high = i;
-    
+
             while(s.charAt(low) == s.charAt(high)){
                 low--;
                 high++;
@@ -17,14 +15,11 @@ class Solution {
                     break;
                 }
             }
-
             String palindrome = s.substring(low + 1, high);
-
-            if(palindrome.length() > LPS.length()){
+            if(LPS.length() < palindrome.length()){
                 LPS = palindrome;
             }
 
-            // considering the even length
             low = i - 1;
             high = i;
             while(s.charAt(low) == s.charAt(high)){
@@ -35,9 +30,8 @@ class Solution {
                     break;
                 }
             }
-            
             palindrome = s.substring(low+1, high);
-            if(palindrome.length() > LPS.length()){
+            if(LPS.length() < palindrome.length()){
                 LPS = palindrome;
             }
         }
