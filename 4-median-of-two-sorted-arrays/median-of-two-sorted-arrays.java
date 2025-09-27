@@ -1,40 +1,31 @@
 class Solution {
-    public double findMedianSortedArrays(int[] num1, int[] num2) {
-        int m = num1.length;
-        int n = num2.length;
-        int newArr[] = new int[m + n];
-        int k = 0;
-        int i = 0, j = 0;
+    public double findMedianSortedArrays(int[] nums1, int[] nums2) {
+        int m = nums1.length;
+        int n = nums2.length;
+        int []newArr = new int[m+n];
+        int i = 0, j = 0, k = 0;
 
         while(i < m && j < n){
-            if(num1[i] < num2[j]){
-                newArr[k] = num1[i];
-                i++;
+            if(nums1[i] < nums2[j]){
+                newArr[k++] = nums1[i++];
             }
             else{
-                newArr[k] = num2[j];
-                j++;
+                newArr[k++] = nums2[j++];
             }
-            k++;
         }
-
         while(i < m){
-            newArr[k] = num1[i];
-            i++;
-            k++;
+            newArr[k++] = nums1[i++];
         }
         while(j < n){
-            newArr[k] = num2[j];
-            j++;
-            k++;
+            newArr[k++] = nums2[j++];
         }
 
-        int totalLen = m + n;
-        if(totalLen % 2 == 1){
-            return newArr[totalLen / 2];
+        int totalLength = m + n;
+        if(totalLength % 2 == 1){
+            return newArr[totalLength / 2];
         }
         else{
-            return (newArr[totalLen / 2] + newArr[(totalLen / 2) - 1]) / 2.0;
+            return (newArr[totalLength/2] + newArr[totalLength/2 - 1])/2.0;
         }
     }
 }
