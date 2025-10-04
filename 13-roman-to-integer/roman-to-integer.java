@@ -10,19 +10,19 @@ class Solution {
         map.put('C', 100);
         map.put('D', 500);
         map.put('M', 1000);
-
+        
         int total = 0;
         int prevValue = 0;
 
         for(int i = s.length()-1; i>=0; i--){
-            int currentVal = map.get(s.charAt(i));
-            if(currentVal < prevValue){
-                total = total - currentVal;
+            int currentValue = map.get(s.charAt(i));
+            if(prevValue > currentValue){
+                total = total - currentValue;
             }
             else{
-                total = total + currentVal;
+                total = total + currentValue;
             }
-            prevValue = currentVal;
+            prevValue = currentValue;
         }
         return total;
     }
