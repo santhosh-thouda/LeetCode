@@ -6,8 +6,7 @@ class Solution {
         }
         return fastPow(x, n);
     }
-
-    public double fastPow(double x, int n){
+    private static double fastPow(double x, int n){
         if(n == 0)return 1;
         double half = fastPow(x, n/2);
         if(n % 2 == 0)return half * half;
