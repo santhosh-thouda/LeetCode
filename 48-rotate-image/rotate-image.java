@@ -3,6 +3,9 @@ class Solution {
         int rows = matrix.length;
         int cols = matrix[0].length;
 
+        int[] rowZero = new int[rows];
+        int[] colZero = new int[cols];
+
         for(int i = 0; i<rows; i++){
             for(int j = i; j<cols; j++){
                 int temp = matrix[i][j];
@@ -11,9 +14,9 @@ class Solution {
             }
         }
 
-        for(int i = 0; i < rows; i++){
-            int left = 0, right = rows-1;
-            while(left < right){
+        for(int i = 0; i<rows; i++){
+            int left = 0, right = rows - 1;
+            while(left <= right){
                 int temp = matrix[i][left];
                 matrix[i][left] = matrix[i][right];
                 matrix[i][right] = temp;
