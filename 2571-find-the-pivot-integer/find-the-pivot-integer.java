@@ -7,7 +7,7 @@ class Solution {
 
         for(int i = 1; i<=n; i++){
             left = left + i;
-            if(left == totalSum - left + i)return i;
+            if(left == totalSum - left +i)return i;
         }
 
         return -1;
