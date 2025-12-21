@@ -2,23 +2,26 @@ class Solution {
     public int[] findErrorNums(int[] nums) {
         int n = nums.length;
         int duplicate = -1;
-        int missed = -1;
-        HashMap<Integer, Integer> map = new HashMap<>();
+        int missing = -1;
 
-        for(int i = 1; i<=n; i++){
-            map.put(nums[i-1], map.getOrDefault(nums[i-1], 0) + 1);
+        for(int i = 0; i<n; i++){
+            int index = nums[i] > 0 ? nums[i] - 1 : -nums[i] - 1;
 
-            if(map.get(nums[i-1]) == 2){
-                duplicate = nums[i-1];
-            };
-        }
-
-        for(int i = 1; i<=n; i++){
-            if(!map.containsKey(i)){
-                missed = i;
+            if(nums[index] > 0){
+                nums[index] = -nums[index];
+            }
+            else{
+                duplicate = index + 1;
             }
         }
 
-        return new int[]{duplicate, missed};
+        for(int i = 1; i<=n; i++){
+            if(nums[i-1] > 0){
+                missing = i;
+                break;
+            }
+        }
+        
+        return new int[]{duplicate, missing};
     }
 }
