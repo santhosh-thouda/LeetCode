@@ -9,12 +9,10 @@ class Solution {
             int width = right - left ;
             int currentArea = width * Math.min(height[left], height[right]);
 
-            if(height[left] < height[right]){    
-                currentArea = width * height[left];
+            if(height[left] < height[right]){
                 left++;
             }
             else{
-                currentArea = width * height[right];
                 right--;
             }
             maxArea = Math.max(maxArea, currentArea);
