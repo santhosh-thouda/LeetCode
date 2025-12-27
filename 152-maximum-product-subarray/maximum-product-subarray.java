@@ -1,18 +1,19 @@
 class Solution {
     public int maxProduct(int[] arr) {
-        int max = arr[0];
-        int minProduct = arr[0];
-        int maxProduct = arr[0];
+        int prod  = 1;
+        int max = Integer.MIN_VALUE;
 
-        for(int i = 1; i<arr.length; i++){
-            if(arr[i] < 0){
-                int temp = maxProduct;
-                maxProduct = minProduct;
-                minProduct = temp;
-            }
-            maxProduct = Math.max(arr[i], maxProduct * arr[i]);
-            minProduct = Math.min(arr[i], minProduct * arr[i]);
-            max = Math.max(maxProduct, max);
+        for(int i = 0; i<arr.length; i++){
+            prod *= arr[i];
+            max = Math.max(max, prod);
+            if(prod == 0)prod = 1;
+        }
+
+        prod = 1;
+        for(int i = arr.length - 1; i>=0; i--){
+            prod *= arr[i];
+            max = Math.max(max, prod);
+            if(prod == 0)prod = 1;
         }
         return max;
     }
