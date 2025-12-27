@@ -1,15 +1,10 @@
 class Solution {
     public int arraySign(int[] nums) {
-        int product = 1;
-        for(int i = 0; i<nums.length; i++){
-            product *= signFunc(nums[i]);
+        int sign = 1;
+        for(int num : nums){
+            if(num == 0)sign = 0;
+            else if(num < 0)sign = -(sign);
         }
-        return product;
-    }
-
-    private int signFunc(long x){
-        if(x > 0)return 1;
-        else if(x < 0)return -1;
-        return 0;
+        return sign;
     }
 }
