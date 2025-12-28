@@ -1,16 +1,12 @@
 class Solution {
     public int clumsy(int n) {
-        long ans = 0;
-        int sign = 1;
+        if(n <= 2)return n;
+        if(n == 3)return 6;
+        if(n == 4)return 7;
 
-        for(int i = n; i>0; i -= 4){
-            long temp = i;
-            if(i-1 > 0)temp *= i-1;
-            if(i-2 > 0)temp /= i-2;
-            ans += temp * sign;
-            if(i-3 > 0)ans += i - 3;
-            sign = -1;
-        }
-        return (int)ans;
+        if(n%4 == 0)return n + 1;
+        if(n%4 == 1)return n + 2;
+        if(n%4 == 2)return n + 2;
+        return n - 1;
     }
 }
