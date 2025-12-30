@@ -6,15 +6,8 @@ class Solution {
             str[i] = String.valueOf(nums[i]);
         }
 
-        for(int i = 0; i<nums.length; i++){
-            for(int j = i+1; j<nums.length; j++){
-                if((str[j] + str[i]).compareTo(str[i] + str[j]) > 0){
-                    String temp = str[j];
-                    str[j] = str[i];
-                    str[i] = temp;
-                }
-            }
-        }
+        Arrays.sort(str, (a, b) -> (b+a).compareTo(a+b));
+
         if(str[0].equals("0"))return "0";
 
 
