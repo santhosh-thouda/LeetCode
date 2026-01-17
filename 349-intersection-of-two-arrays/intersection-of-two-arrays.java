@@ -3,20 +3,21 @@ class Solution {
         HashSet<Integer> set = new HashSet<>();
         HashSet<Integer> result = new HashSet<>();
 
-        for(int x : nums1){
-            set.add(x);
+        for(int i : nums1){
+            set.add(i);
         }
-        
-        for(int x : nums2){
-            if(set.contains(x)){
-                result.add(x);
+
+        for(int i : nums2){
+            if(set.contains(i)){
+                result.add(i);
             }
         }
 
         int[] ans = new int[result.size()];
-        int i = 0;
+        int k = 0;
+
         for(int x : result){
-            ans[i++] = x;
+            ans[k++] = x;
         }
 
         return ans;
