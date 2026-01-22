@@ -3,8 +3,7 @@ class Solution {
         HashSet<Character> set = new HashSet<>();
 
         for(int i = 0; i<s.length(); i++){
-            char ch = s.charAt(i);
-            set.add(ch);
+            set.add(s.charAt(i));
         }
 
         return set.size();
