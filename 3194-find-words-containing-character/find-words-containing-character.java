@@ -3,8 +3,6 @@ class Solution {
         List<Integer> list = new ArrayList<>();
 
         for(int i = 0; i<words.length; i++){
-            String word = words[i];
-
             if(words[i].indexOf(x) != -1){
                 list.add(i);
             }
