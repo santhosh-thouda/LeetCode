@@ -1,31 +1,49 @@
 class Solution {
     public int shipWithinDays(int[] weights, int days) {
-        int left = Arrays.stream(weights).max().getAsInt(); //minimum possible capacity is the max of all weights
-        int right = Arrays.stream(weights).sum(); // maximum possible capacity is the sum of all the weights
-        int result = right;
-        while(left < right){
-            int mid = left + (right-left)/2;
+
+        // min possible capacity would be max value of all the values
+        int min = 0;
+        for(int i = 0; i<weights.length; i++){
+            min = Math.max(min, weights[i]);
+        }
+
+        // max possible capacity would be sum of all values in weights
+        int max = 0;
+        for(int i = 0; i<weights.length; i++){
+            max = max + weights[i];
+        }
+
+        int left = min;
+        int right = max;
+        int ans = 0;
+
+        while(left <= right){
+            int mid = left + (right - left)/2;
+
             if(possible(weights, mid, days)){
-                result = mid;
-                right = mid;
+                ans = mid;
+                right = mid - 1;
             }
             else{
                 left = mid + 1;
             }
         }
-        return result;
+        return ans;
     }
-    private static boolean possible(int[] weights, int mid, int days){
-        int dayCount = 1, currentLoad = 0;
+
+    public boolean possible(int[] weights, int mid, int days){
+        int daysCount = 1;
+        int currentLoad = 0;
 
         for(int w : weights){
             if(currentLoad + w > mid){
-                dayCount++;
+                daysCount++;
                 currentLoad = 0;
             }
             currentLoad += w;
-            if(dayCount > days)return false;
+            if(daysCount > days)return false;
         }
-        return dayCount <= days;
+
+        return daysCount <= days;
     }
 }
