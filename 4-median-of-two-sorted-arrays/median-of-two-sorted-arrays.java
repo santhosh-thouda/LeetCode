@@ -1,30 +1,51 @@
 class Solution {
     public double findMedianSortedArrays(int[] nums1, int[] nums2) {
-        int m = nums1.length;
-        int n = nums2.length;
-        int[] result = new int[m + n];
-
-        int i = 0, j = 0, k = 0;
         
-        while(i < m && j < n){
+        int i = 0;
+        int j = 0;
+        int n1 = nums1.length;
+        int n2 = nums2.length;
+
+        int n = n1 + n2;
+        
+        int index2 = n/2;
+        int index1 = index2-1;
+
+        int indexOneEle = -1;
+        int indexTwoEle = -1;
+
+        int count = 0;
+
+        while(i < n1 && j < n2){
             if(nums1[i] < nums2[j]){
-                result[k++] = nums1[i++];
+                if(count == index1) indexOneEle = nums1[i];
+                if(count == index2) indexTwoEle = nums1[i];
+                i++;
+                count++;
             }
             else{
-                result[k++] = nums2[j++];
+                if(count == index1) indexOneEle = nums2[j];
+                if(count == index2) indexTwoEle = nums2[j];
+                j++;
+                count++;
             }
         }
 
-        while(i < m){
-            result[k++] = nums1[i++];
+        while(i < n1){
+            if(count == index1) indexOneEle = nums1[i];
+            if(count == index2) indexTwoEle = nums1[i];
+            i++;
+            count++;
         }
 
-        while(j < n){
-            result[k++] = nums2[j++];
+        while(j < n2){
+            if(count == index1) indexOneEle = nums2[j];
+            if(count == index2) indexTwoEle = nums2[j];
+            j++;
+            count++;
         }
 
-        int totalLength = m + n;
-        if(totalLength % 2 == 1)return result[totalLength/2];
-        else return (result[totalLength/2] + result[totalLength/2 - 1])/2.0;
+        return (n % 2 == 1) ? indexTwoEle : (indexOneEle + indexTwoEle)/2.0;
+
     }
 }
