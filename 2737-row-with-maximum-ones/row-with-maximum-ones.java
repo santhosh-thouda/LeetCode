@@ -1,44 +1,27 @@
 class Solution {
     public int[] rowAndMaximumOnes(int[][] matrix) {
-
-        int row = 0;
-        int maxOnes = 0;
+        
+        int a = 0;
+        int b = 0;
 
         int rows = matrix.length;
         int cols = matrix[0].length;
 
-        for (int i = 0; i < rows; i++) {
+        int count = 0;
 
-            Arrays.sort(matrix[i]);
-
-            int firstOne = lowerBound(matrix[i], 1);
-            int count = cols - firstOne;
-
-            if (count > maxOnes) {
-                maxOnes = count;
-                row = i;
+        for(int i = 0; i<rows; i++){
+            count = 0;
+            for(int j = 0; j<cols; j++){
+                if(matrix[i][j] == 1){
+                    count++;
+                }
+            }
+            if(count > b){
+                a = i;
+                b = count;
             }
         }
 
-        return new int[]{row, maxOnes};
-    }
-
-    private int lowerBound(int[] arr, int x) {
-
-        int low = 0;
-        int high = arr.length;
-
-        while (low < high) {
-
-            int mid = low + (high - low) / 2;
-
-            if (arr[mid] >= x) {
-                high = mid;
-            } else {
-                low = mid + 1;
-            }
-        }
-
-        return low;
+        return new int[]{a, b};
     }
 }
