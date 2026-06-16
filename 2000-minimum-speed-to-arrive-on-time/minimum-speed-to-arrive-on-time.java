@@ -23,14 +23,11 @@ class Solution {
     public double canReach(int[] dist, int speed){
         double time = 0;
 
-        for(int i = 0; i<dist.length; i++){
-            if(i != dist.length - 1){
-                time += Math.ceil((double)dist[i] / speed);
-            }
-            else{
-                time += (double)dist[dist.length - 1] / speed;
-            }
+        for(int i = 0; i<dist.length - 1; i++){
+            time += Math.ceil((double)dist[i] / speed);
         }
+        
+        time += (double)dist[dist.length - 1] / speed;
         return time;
     }
 }
